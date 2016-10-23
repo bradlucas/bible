@@ -1,0 +1,134 @@
+-*- mode:org; -*-
+
+* Parameters
+
+|------------+------+---------------------------------+---------------------+-----------------------------------------------------+---|
+| Parameters | 1    | 2                               | 3                   |                                                     |   |
+|            |      |                                 |                     | Show list of available books (new and old to filter |   |
+|            | book |                                 |                     | Show list of chapter numbers for book               |   |
+|            | book | chapter_num                     |                     | Show list of verse numbers for book:chapter         |   |
+|------------+------+---------------------------------+---------------------+-----------------------------------------------------+---|
+|            | book | chapter_num                     |                    | Show all verses in chapter                          |   |
+|            | book | chapter_num                     | verse_num           | Show verse                                          |   |
+|            | book | chapter_num                     | verse_num:verse_num | Show verses from verse to verse                     |   |
+|            | book | chapter_num                     | verse_num:          | Show verses from verse to end of chapter            |   |
+|------------+------+---------------------------------+---------------------+-----------------------------------------------------+---|
+|            |      |                                 |                     |                                                     |   |
+|            | book | chapter_num:verse               |                     |                                                     |   |
+|            | book | chapter_num:verse_num-verse_num |                     |                                                     |   |
+|------------+------+---------------------------------+---------------------+-----------------------------------------------------+---|
+
+
+
+|------------+------+-------------+---------------------------------------+-----------------------------------------------------+---------|
+| Options    |      |             |                                       |                                                     | Default |
+|            | -t   |             | return formated in text format        |                                                     | true    |
+|            | -q   |             | quit rather than wait for new command | --no-quit                                           | true    |
+|            |      |             |                                       |                                                     |         |
+|            | -f   | filename    | write response to a file              |                                                     |         |
+|            |      |             |                                       |                                                     |         |
+|            | -x   |             | return original xml format            |                                                     |         |
+|            | -j   |             | return original json format           |                                                     |         |
+|            | -h   |             | return formated in html format        |                                                     |         |
+|            |      |             |                                       |                                                     |         |
+|            | -b   |             | show help banner                      |                                                     |         |
+|------------+------+-------------+---------------------------------------+-----------------------------------------------------+---------|
+
+* API Research
+- https://www.quora.com/What-are-the-best-open-source-Bible-APIs-to-integrate-into-the-Bible-Verse-website-with-all-versions-main-importantly-NIV-and-KJV
+** GetBible.Net
+- https://getbible.net/api
+- https://getbible.net/json?p=James
+- Oldish
+- No key require
+- Looks like you need to know the books, etc
+- But, is very simple
+
+- Could just call for each book and parse the results pers the query
+- https://getbible.net/json?p=James
+
+** ESV Bible Web Service
+- http://www.esvapi.org/api
+- Seems dated
+- Not apparent how to start with list of books
+
+** TODO BibleSearch
+- https://bibles.org/pages/api/documentation/bookgroups
+
+- Has books list
+- Has chapters for each book
+
+- Please include the copyright information with all of the Scripture you display.
+
+** Bible.org
+- http://labs.bible.org/api_web_service
+
+- Not sure how to get list of books to start
+
+** Marketplace / Holy Bible
+- https://market.mashape.com/ajith/holy-bible
+- Requires API Key but is free
+
+- Has a GetBooks function which returns a string
+- Will require parsing
+
+- No way to know how many chapters in each book
+- (that I see)
+
+* Clojure calling a JSON webservice
+- http://stackoverflow.com/questions/17912139/how-to-access-a-json-webservice-in-clojure
+
+Take a look at clj-http. One of its dependencies is a JSON library called cheshire.
+
+Here's an example of a basic GET request that parses the body as JSON.
+
+(clj-http.client/get "http://example.com/foo.json" {:as :json})
+
+
+
+* Book Json Return Hierchary
+{
+  "type": "book",
+  "version": "kjv",
+  "book_name": "Titus",
+  "book_nr": 56,
+  "direction": "LTR",
+  "book": {
+    "1": {
+      "chapter_nr": 1,
+      "chapter": {
+        "1": {
+          "verse_nr": 1,
+          "verse": "Paul, a servant of God, and an apostle of Jesus Christ, according to the faith of God's elect, and the acknowledging of the truth which is after godliness;"
+        },
+        "2": {
+          "verse_nr": 2,
+          "verse": "In hope of eternal life, which God, that cannot lie, promised before the world began;"
+        },
+        "3": {
+          "verse_nr": 3,
+          "verse": "But hath in due times manifested his word through preaching, which is committed unto me according to the commandment of God our Saviour;"
+        },
+        ...
+        "16": {
+          "verse_nr": 16,
+          "verse": "They profess that they know God; but in works they deny him, being abominable, and disobedient, and unto every good work reprobate."
+        }
+      }
+    },
+    "2": {
+      "chapter_nr": 2,
+      "chapter": {
+        "1": {
+          "verse_nr": 1,
+          "verse": "But speak thou the things which become sound doctrine:"
+        },
+        "2": {
+          "verse_nr": 2,
+          "verse": "That the aged men be sober, grave, temperate, sound in faith, in charity, in patience."
+        },        
+
+* Support for compact naming
+Isaiah 40:28-31
+
+- chapter:verse-[verse]

@@ -1,0 +1,45 @@
+    
+    |-----------------+---+-----------------|
+    | OLD TESTAMENT   |   | NEW TESTAMENT   |
+    |-----------------+---+-----------------|
+    | Genesis         |   | Matthew         |
+    | Exodus          |   | Mark            |
+    | Leviticus       |   | Luke            |
+    | Numbers         |   | John            |
+    | Deuteronomy     |   | Acts            |
+    | Joshua          |   | Romans          |
+    | Judges          |   | 1 Corinthians   |
+    | Ruth            |   | 2 Corinthians   |
+    | 1 Samuel        |   | Galatians       |
+    | 2 Samuel        |   | Ephesians       |
+    | 1 Kings         |   | Philippians     |
+    | 2 Kings         |   | Colossians      |
+    | 1 Chronicles    |   | 1 Thessalonians |
+    | 2 Chronicles    |   | 2 Thessalonians |
+    | Ezra            |   | 1 Timothy       |
+    | Nehemiah        |   | 2 Timothy       |
+    | Esther          |   | Titus           |
+    | Job             |   | Philemon        |
+    | Psalm           |   | Hebrews         |
+    | Proverbs        |   | James           |
+    | Ecclesiastes    |   | 1 Peter         |
+    | Song of Solomon |   | 2 Peter         |
+    | Isaiah          |   | 1 John          |
+    | Jeremiah        |   | 2 John          |
+    | Lamentations    |   | 3 John          |
+    | Ezekiel         |   | Jude            |
+    | Daniel          |   | Revelation      |
+    | Hosea           |   |                 |
+    | Joel            |   |                 |
+    | Amos            |   |                 |
+    | Obadiah         |   |                 |
+    | Jonah           |   |                 |
+    | Micah           |   |                 |
+    | Nahum           |   |                 |
+    | Habakkuk        |   |                 |
+    | Zephaniah       |   |                 |
+    | Haggai          |   |                 |
+    | Zechariah       |   |                 |
+    | Malachi         |   |                 |
+    |-----------------+---+-----------------|
+    
