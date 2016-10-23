@@ -1,4 +1,4 @@
-(defproject bible "1.0.0"
+(defproject com.bradlucas/bible "1.0.0"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
