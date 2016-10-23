@@ -10,7 +10,7 @@ API is http://getbible.net
 
 Enter "Book Chapter:Verse" or "Book Chapter:Verse-Verse"
 
-- java -jar target/bible-0.1.0-SNAPSHOT-standalone.jar genesis 1:1-10
+- java -jar target/bible-1.0.0-standalone.jar genesis 1:1-10
 
 
 ## License
