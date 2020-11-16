@@ -1,5 +1,7 @@
 # bible
 
+[![Clojars Project](https://img.shields.io/clojars/v/com.bradlucas/bible.svg)](https://clojars.org/com.bradlucas/bible)
+
 Query for bible quotes. 
 
 Demonstrates calling a web services API and returning results.
